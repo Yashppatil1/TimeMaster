@@ -1,0 +1,314 @@
+/* TimeMaster - Custom Styles */
+
+/* Timer Display Styling */
+.timer-display {
+    font-family: 'Courier New', monospace;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+/* World Clock Styling */
+.world-clock {
+    font-family: 'Courier New', monospace;
+}
+
+/* Active Tab Styling */
+.tab-active {
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Styles */
+.dark {
+    color-scheme: dark;
+}
+
+.dark body {
+    background-color: #111827;
+}
+
+.dark .bg-white {
+    background-color: #1f2937;
+}
+
+.dark .text-gray-900 {
+    color: #f9fafb;
+}
+
+.dark .text-gray-600 {
+    color: #d1d5db;
+}
+
+.dark .text-gray-500 {
+    color: #9ca3af;
+}
+
+.dark .bg-gray-50 {
+    background-color: #374151;
+}
+
+.dark .bg-gray-100 {
+    background-color: #4b5563;
+}
+
+.dark .border-gray-200 {
+    border-color: #6b7280;
+}
+
+.dark .border-gray-300 {
+    border-color: #6b7280;
+}
+
+.dark .shadow,
+.dark .shadow-sm,
+.dark .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulse Animation for Timer */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.pulse-animation {
+    position: relative;
+}
+
+.pulse-animation::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.4);
+    transform: translate(-50%, -50%);
+    animation: pulse-ring 2s infinite;
+    z-index: -1;
+}
+
+/* Button Disabled State */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: inherit !important;
+}
+
+/* Smooth Transitions */
+.transition-all {
+    transition: all 0.2s ease-in-out;
+}
+
+.transition-colors {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/* Task Item Hover Effects */
+.task-item {
+    transition: all 0.2s ease-in-out;
+}
+
+.task-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Overdue Task Styling */
+.task-overdue {
+    border-left: 4px solid #ef4444;
+    background-color: #fef2f2;
+}
+
+.dark .task-overdue {
+    background-color: #3f1515;
+    border-left-color: #dc2626;
+}
+
+/* Completed Task Styling */
+.task-completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+/* Timer Circle Progress */
+.timer-circle {
+    position: relative;
+    background: conic-gradient(from 0deg, #3b82f6 0deg, #e5e7eb 0deg);
+    transition: background 0.1s linear;
+}
+
+/* Tab Button Hover Effects */
+.tab-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.tab-btn:hover::before {
+    left: 100%;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* World Clock Cards Animation */
+.world-clock-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.world-clock-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Focus States */
+input:focus {
+    outline: none;
+    ring: 2px solid #3b82f6;
+    border-color: #3b82f6;
+}
+
+.dark input:focus {
+    ring-color: #60a5fa;
+    border-color: #60a5fa;
+}
+
+/* Motivational Quote Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#motivationalQuote {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .timer-display {
+        font-size: 3rem;
+    }
+    
+    .tab-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .tab-btn svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .timer-display {
+        font-size: 2.5rem;
+    }
+    
+    #timerCircle {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .tab-btn span {
+        display: none;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .tab-active {
+        background-color: #000000;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+    }
+    
+    button {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Focus Visible for Better Accessibility */
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
